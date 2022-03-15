@@ -28,12 +28,31 @@ header h1 {
   text-align: center;
   margin: 2.5rem;
 }
+button {
+  border: 0px;
+  background: transparent;
+}
+
+i {
+  color: #86c166;
+  font-size: 1.5rem;
+  border: 2px solid #86c166;
+  border-radius: 5px;
+  padding: 0.3rem;
+  display: none;
+}
+
+.fa {
+  display: none;
+  margin: 0 1rem;
+}
 
 .function-btn {
   display: flex;
   justify-content: space-between;
 }
 .function-btn p a {
+  margin: 0 1rem;
   color: #86c166;
   font-size: 18px;
   font-weight: 400;
@@ -101,40 +120,44 @@ header h1 {
   max-width: 1080px;
   margin: 5rem auto 30rem;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   position: relative;
 }
 
-.content-item-group .text {
+.content-item-group .text,
+.content-item-group .content-img {
   width: 50%;
+  height: 350px;
+}
+
+.content-item-group .text {
   background-color: #f3de8a;
+  z-index: 2;
+  position: absolute;
+  right: 2rem;
+  padding: 4rem 2.2rem 4rem 5rem;
 }
 
 .content-item-group .content-img {
   position: absolute;
-  width: 50%;
+  left: 2rem;
   top: 2rem;
-  left: 6.5rem;
-  height: 350px;
-  max-width: 450px;
   z-index: 3;
 }
 .content-item-group img {
   width: 100%;
+  vertical-align: middle;
+  height: 350px;
 }
 
-.content-item-group .text {
-  position: absolute;
-  top: 0;
-  right: 6.5rem;
-  height: 350px;
-  z-index: 2;
-  padding: 50px;
-  max-width: 450px;
-}
 .content-item-group .text h1 {
-  text-align: center;
-  margin-bottom: 2rem;
+  padding: 5px;
+  color: #333;
+}
+
+.content-item-group .text p {
+  margin-top: 2rem;
+  color: #333;
 }
 
 .shop {
@@ -149,9 +172,13 @@ header h1 {
   background-color: #fff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   margin: 0 20px;
-
-  width: 26%;
+  width: 30%;
+  height: 250px;
   display: flex;
+}
+.item-card img {
+  width: 100%;
+  height: 250px;
 }
 .text-group {
   display: flex;
@@ -245,6 +272,7 @@ header h1 {
 .about-content .text,
 .about-content .content-img {
   width: 50%;
+  height: 350px;
 }
 
 .about-content .text {
@@ -275,6 +303,7 @@ header h1 {
 .about-content .content-img img {
   width: 100%;
   vertical-align: middle;
+  height: 350px;
 }
 footer {
   margin-top: 5rem;
@@ -283,4 +312,76 @@ footer {
   height: 60px;
   color: #666;
   line-height: 60px;
+}
+
+@media screen and (max-width: 1330px) {
+  .item-card {
+    width: 50%;
+  }
+  .card-btn .item-btn,
+  .card-btn .shop-card-btn {
+    margin: 0.2rem 0;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .function-btn p a {
+    display: none;
+  }
+  .fa {
+    display: block;
+  }
+  .item-card {
+    width: 100%;
+  }
+  .item-card:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .content-item-group {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin: 2rem 0;
+  }
+  .content-item-group .text,
+  .content-item-group .content-img {
+    position: static;
+    height: 50%;
+    width: 80%;
+  }
+
+  .content-item-group .text {
+    order: 2;
+    padding: 5rem;
+  }
+
+  .content-item-group .content-img {
+    height: 300px;
+    order: 1;
+    border: 5px solid #f3de8a;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  .about-content .text,
+  .about-content .content-img {
+    position: static;
+    height: 50%;
+    width: 80%;
+  }
+  .about-content .text {
+    order: 2;
+    padding: 5rem;
+  }
+  .about-content .content-img {
+    height: 300px;
+    order: 1;
+    border: 5px solid #c3e2dc;
+  }
 }
